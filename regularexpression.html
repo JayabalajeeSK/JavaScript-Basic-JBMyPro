@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html><head><meta charset="utf-8"><title>Regular Expression</title></head> 
+<body> 
+<p>String: <span id="string"></span></p> 
+<p>Pattern: <span id="pattern"></span></p> 
+<p>Result(search): <span id="search"></span></p> 
+<p>Result(match):<span id="match"></span></p> 
+<p>Result(test): <span id="test"></span></p> 
+<script> 
+      var str = "Atlanta \n5783 75%"; 
+      //var pattern = /a/g; // search leter a in string
+      //var pattern = /[a-z]/g; //search all small leters from a - z
+      //var pattern = /[^atn]/g; //search letters withod a,t,n
+      //var pattern = /[4-7]/g; //search digit between 4 and 7
+      //var pattern = /\d/g; //search any digits
+      //var pattern = /\w/g; //search any letter characters
+      //var pattern = /\W/g; //search other than the letters characters
+      //var pattern = /\s/g; //search whitespace
+      //var pattern = /\d{10}/g; //search for 10 - digits
+      //var pattern = /^A/g; //search for capital a letter at beggining
+      //var pattern = /\n/g; //check line break
+      var pattern = new RegExp("a","g"); //-> /a/g - search char 'a'
+      document.getElementById("string").innerHTML = str; 
+      document.getElementById("pattern").innerHTML = pattern; 
+      document.getElementById("search").innerHTML = str.search(pattern); 
+      document.getElementById("match").innerHTML = str.match(pattern); 
+      document.getElementById("test").innerHTML = pattern.test(str); 
+</script></body></html> 
+<!-- String: Atlanta 5783 75%
+Pattern: /a/g
+Result(search): 3
+Result(match):a,a
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /a/g
+Result(search): 3
+Result(match):a,a
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /[^atn]/g
+Result(search): 0
+Result(match):A,l, , ,5,7,8,3, ,7,5,%
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /[4-7]/g
+Result(search): 9
+Result(match):5,7,7,5
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\d/g
+Result(search): 9
+Result(match):5,7,8,3,7,5
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\w/g
+Result(search): 0
+Result(match):A,t,l,a,n,t,a,5,7,8,3,7,5
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\W/g
+Result(search): 7
+Result(match): , , ,%
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\s/g
+Result(search): 7
+Result(match): , ,
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\d{10}/g
+Result(search): -1
+Result(match):
+Result(test): false -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /^A/g
+Result(search): 0
+Result(match):A
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /\n/g
+Result(search): 8
+Result(match):
+Result(test): true -->
+
+<!-- String: Atlanta 5783 75%
+Pattern: /a/g
+Result(search): 3
+Result(match):a,a
+Result(test): true -->

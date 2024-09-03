@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>arrays</title></head> 
+<body>
+    <p id="myParagraph">Javascript.</p> 
+    <script> 
+      var shoppingList = ["bread", "eggs", "milk"]; 
+      //var shoppingList = new Array("bread", "eggs", "milk"); // constructor for creating array
+      showResult(shoppingList); //bread,eggs,milk
+      showResult(shoppingList[0]); //bread
+      showResult(shoppingList[2]); //milk - negative indexing is not allowed in JS
+      
+      document.getElementById("myParagraph").innerHTML= document.getElementById("myParagraph").innerHTML + "<br />" + shoppingList[1]; //eggs
+      function showResult(x)
+      { 
+        document.getElementById("myParagraph").innerHTML= document.getElementById("myParagraph").innerHTML + "<br />" + x;
+      } 
+// Javascript.
+// bread,eggs,milk
+// bread
+// milk
+// eggs
+// function called first
+      
+
+shoppingList[1] = "yogurt"; 
+showResult(shoppingList); //bread,yogurt,milk
+
+shoppingList[2] = "orange"; 
+showResult(shoppingList); //bread,yogurt,orange
+
+delete shoppingList[1]; 
+showResult(shoppingList); //bread,,orange - note deleted completely
+
+shoppingList[1] = "yogurt"; 
+showResult(shoppingList); //bread,yogurt,orange
+
+shoppingList.splice(1,1); // start position, no of item
+showResult(shoppingList); //bread,orange - completely deleted
+
+shoppingList.splice(1,0,"banana", "apple"); //pos 1 , item deleted 0, remaining item added from that pos 
+showResult(shoppingList); //bread,banana,apple,orange
+
+shoppingList.sort(); 
+showResult(shoppingList); //bread,banana,apple,orange
+
+shoppingList.reverse(); 
+showResult(shoppingList); //apple,banana,bread,orange (called from last called array) -> orange,bread,banana,apple
+
+var myString1 = 'jayabalajee'; 
+var myString2 = 'ja ya ba la jee'; 
+var myArray1 = myString1.split(' ',2); //return char where it have space and split it into 2 parts and seperated by , - no spaces
+var myArray2 = myString2.split(' ',4); //return char where it have space and split it into 4 parts and seperated by , - upto la
+showResult(myArray1); //jayabalajee
+showResult(myArray2); //ja,ya,ba,la
+</script> 
+</body> 

@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> <head> <meta charset ="utf-8"> <title> variables and date types </title> <body>
+    <!-- javascript--> 
+    <script> 
+    //variables
+      var x = 3; 
+      window.console.log(x); //3
+
+      var y; 
+      y = 5; 
+      var z; 
+      window.console.log("the value of z is " + z);  //undifined
+
+      z = x + y; //3+5
+      window.console.log("the value of z is " + z); //8
+      window.console.log("the type of z is: " + typeof(z)); //number
+      z = x + " " + y; 
+
+      window.console.log("the value of z is " + z); //3 5
+      window.console.log("the type of z is " + typeof(z)); //string
+
+      var Fname = "jaya"; 
+      var Lname = "bala"; 
+      var FullName = Fname + " " + Lname; 
+      window.console.log("the Full name is: " + FullName); //jaya bala
+      window.console.log("the type of Full name is: " + typeof(FullName)); //string
+
+      var check = (x == 5); //3==5
+      window.console.log("the value of check is: " + check); //false
+      window.console.log("the type of check is: " + typeof(check)); //boolean
+
+      var myArray = [1,2,3]; 
+      window.console.log(myArray); //[1,2,3]
+      window.console.log(typeof(myArray)); //object
+    </script></body></html>

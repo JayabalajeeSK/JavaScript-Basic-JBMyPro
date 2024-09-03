@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html><head><meta charset="utf-8"><title>objects</title></head> 
+<body><p>Javascript.</p> 
+<script> 
+      var myPhone = 
+      { 
+        make : "Apple" , 
+        model : "Iphone 4", 
+        warranty : 12, 
+        color : "white" 
+      } ;
+
+      window.console.log(myPhone); 
+      //{make: 'Apple', model: 'Iphone 4', warranty: 12, color: 'white'}
+
+      delete myPhone.warranty; 
+      window.console.log(myPhone);
+      //{make: 'Apple', model: 'Iphone 4', color: 'white'}
+
+      window.console.log(myPhone.model); 
+      //Iphone 4
+
+      //new property to object
+      var myOtherPhone = myPhone; 
+      window.console.log(myOtherPhone); 
+      //{make: 'Apple', model: 'Iphone 4', color: 'white'}
+      
+      //change the values in property
+      myOtherPhone.model = "Iphone 5"; 
+      window.console.log(myOtherPhone); 
+      //{make: 'Apple', model: 'Iphone 5', color: 'white'}
+
+      window.console.log(myPhone); 
+      //{make: 'Apple', model: 'Iphone 5', color: 'white'}
+
+      // when you reload the server last console is printed to object where ever we call that same object
+      //{make: 'Apple', model: 'Iphone 5', color: 'white'}
+</script> 
+</body> 
+</html> 

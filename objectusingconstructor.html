@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html><head><meta charset="utf-8"><title>object constructors</title></head> 
+<body><p>Javascript.</p>
+<script> 
+//constructor
+function phone(make, model, warranty, color)
+{ 
+  this.make = make; 
+  this.model = model; 
+  this.warranty = warranty; 
+  this.color = color; 
+  this.extendWarranty = function (x) 
+  { 
+    this.warranty += x;    
+  } 
+} 
+
+//object using constructor
+var myPhone = new phone("redmi", "note 8 pro", 12, "black"); 
+window.console.log(myPhone); 
+
+myPhone.extendWarranty(12); 
+window.console.log(myPhone.warranty); //12+12=24
+
+myPhone.condition = "like new"; 
+window.console.log(myPhone); 
+//{make: 'redmi', model: 'note 8 pro', warranty: 24, color: 'black', extendWarranty: ƒ, …}
+
+window.console.log(myPhone.condition); // like new
+
+var myBrothersPhone = new phone("Apple", "Iphone 4", 6, "black"); 
+window.console.log(myBrothersPhone); 
+//{make: 'Apple', model: 'Iphone 4', warranty: 6, color: 'black', extendWarranty: ƒ}
+
+window.console.log(myBrothersPhone.condition); 
+phone.prototype.condition = "new but ok "; // undefined
+
+window.console.log(myBrothersPhone.condition); //new but ok - brother phone 
+
+window.console.log(myPhone.condition); //like new - my phone
+</script></body></html> 

@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html><head><meta charset="utf-8"><title>while loop</title></head> 
+<body> 
+<p id="myParagraph"> Javascript. </p> 
+<p id="myParagraph1"> Spend Rs.1000 randomly in a marketplace </p> 
+<button onclick="initiateGame()">Start</button> 
+<div id="balance"> Current Balance: Rs.1000 </div> 
+<script> 
+var i = 0; 
+while(i<5)
+{ 
+    document.getElementById("myParagraph").innerHTML += "<br />" + i; 
+    i++; 
+} 
+
+function initiateGame(){ 
+var balance = 1000; 
+var itemsBought = 0; 
+while(balance>0)
+{ 
+var itemPrice = Math.floor(Math.random()*100); // randomly spending between 0 to 10 
+if(itemPrice <= balance)
+{ 
+    itemsBought = itemsBought + 1; 
+    balance =balance - itemPrice; 
+    document.getElementById("balance").innerHTML += "<p> Purchase amount: Rs." + itemPrice +". New Balance: Rs." + balance + ". </p>"; 
+} 
+document.getElementById("balance").innerHTML += "<p> You bought: " + itemsBought + " items.</p>"; 
+} 
+document.getElementById("balance").innerHTML += "<p> You bought: " + itemsBought + " items.</p>"; 
+} 
+</script></body></html> 
+<!-- 
+Javascript.
+0
+1
+2
+3
+4
+
+Spend Rs.1000 randomly in a marketplace
+
+Start
+Current Balance: Rs.1000
+Purchase amount: Rs.20. New Balance: Rs.980.
+Purchase amount: Rs.35. New Balance: Rs.945.
+Purchase amount: Rs.51. New Balance: Rs.894.
+Purchase amount: Rs.58. New Balance: Rs.836.
+Purchase amount: Rs.60. New Balance: Rs.776.
+Purchase amount: Rs.2. New Balance: Rs.774.
+Purchase amount: Rs.23. New Balance: Rs.751.
+Purchase amount: Rs.17. New Balance: Rs.734.
+Purchase amount: Rs.95. New Balance: Rs.639.
+Purchase amount: Rs.35. New Balance: Rs.604.
+Purchase amount: Rs.53. New Balance: Rs.551.
+Purchase amount: Rs.87. New Balance: Rs.464.
+Purchase amount: Rs.39. New Balance: Rs.425.
+Purchase amount: Rs.77. New Balance: Rs.348.
+Purchase amount: Rs.2. New Balance: Rs.346.
+Purchase amount: Rs.73. New Balance: Rs.273.
+Purchase amount: Rs.10. New Balance: Rs.263.
+Purchase amount: Rs.32. New Balance: Rs.231.
+Purchase amount: Rs.6. New Balance: Rs.225.
+Purchase amount: Rs.32. New Balance: Rs.193.
+Purchase amount: Rs.22. New Balance: Rs.171.
+Purchase amount: Rs.61. New Balance: Rs.110.
+Purchase amount: Rs.57. New Balance: Rs.53.
+Purchase amount: Rs.27. New Balance: Rs.26.
+Purchase amount: Rs.17. New Balance: Rs.9.
+Purchase amount: Rs.8. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.0. New Balance: Rs.1.
+Purchase amount: Rs.1. New Balance: Rs.0. -->
